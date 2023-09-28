@@ -8,7 +8,7 @@ import {
   getMovies,
   updateMovie,
 } from "./logic";
-import { checkMovieId, checkMovieName, checkMovieNameDelete } from "./middlewares";
+import { checkMovieId, checkMovieName } from "./middlewares";
 const app = express();
 const PORT = process.env.PORT || 3000;
 
@@ -18,7 +18,7 @@ app.get("/movies", getMovies);
 app.get("/movies/:id", checkMovieId, getMovieId);
 app.post("/movies", checkMovieName, createMovie);
 app.patch("/movies/:id", checkMovieId, checkMovieName, updateMovie);
-app.delete("/movies/:id", checkMovieId, checkMovieNameDelete,deleteMovie);
+app.delete("/movies/:id", checkMovieId, deleteMovie);
 
 app.listen(PORT, async () => {
   await connectDatabase();

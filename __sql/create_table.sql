@@ -3,8 +3,8 @@ CREATE TABLE IF NOT EXISTS movies (
                     name VARCHAR(50) NOT NULL,
                     category VARCHAR(20) NOT NULL,
                     duration INTEGER NOT NULL,
-                    price NUMERIC NOT NULL
+                    price INTEGER NOT NULL
                     
-                    );   
+                );   
 
 
